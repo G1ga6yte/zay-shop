@@ -1,0 +1,21 @@
+.bold{
+    font-weight: bold;
+}
+.greenC{
+    color: #59ab6e;
+}
+.robotoL{
+    font-family: 'Roboto-Light', sans-serif;
+}
+
+.gray{
+    color: #bcbcbc;
+    font-size: 22px;
+    margin: 2px;
+}
+
+.filled{
+    color: #ede861;
+    font-size: 22px;
+    margin: 2px;
+}
