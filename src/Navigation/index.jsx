@@ -1,6 +1,7 @@
 import React from 'react';
 import "./navigation.scss"
 import {Link} from "react-router-dom";
+import "../assets/svgs/style.css"
 
 
 

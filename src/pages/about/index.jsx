@@ -1,9 +1,15 @@
 import React from "react";
+import AboutUs from "./about-us";
+import Services from "./services";
+import BrandSlide from "./brand-slide";
+
 
 function About (){
     return(
         <div className="About-cont">
-            About
+            <AboutUs/>
+            <Services/>
+            <BrandSlide/>
         </div>
     )
 }

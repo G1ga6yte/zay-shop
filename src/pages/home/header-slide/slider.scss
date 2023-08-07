@@ -32,38 +32,40 @@
         display: block;
       }
     }
+
+    .slick-next:before {
+      background-color: #56ae6c;
+      content: '';
+      width: 50px;
+      height: 50px;
+      display: block;
+      transform: rotate(180deg);
+      clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
+
+    }
+
+    .slick-prev:before {
+      background-color: #56ae6c;
+      content: '';
+      width: 50px;
+      height: 50px;
+      display: block;
+      clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
+    }
+
+    .slick-dots li {
+      margin: 0 20px !important;
+    }
+
+    .slick-dots li button:before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 5px;
+      background-color: #56ae6c;
+      cursor: pointer;
+    }
+
   }
 }
 
-.slick-next:before {
-  background-color: #56ae6c;
-  content: '';
-  width: 50px;
-  height: 50px;
-  display: block;
-  transform: rotate(180deg);
-  clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
-
-}
-
-.slick-prev:before {
-  background-color: #56ae6c;
-  content: '';
-  width: 50px;
-  height: 50px;
-  display: block;
-  clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
-}
-
-.slick-dots li {
-  margin: 0 20px !important;
-}
-
-.slick-dots li button:before {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 5px;
-  background-color: #56ae6c;
-  cursor: pointer;
-}
