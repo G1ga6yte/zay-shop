@@ -1,0 +1,51 @@
+.shop-categories{
+  font-family: 'Roboto-Light', sans-serif;
+  padding: 50px 0;
+  .categories-block{
+    width: 23%;
+    .categories-h2{
+      margin-bottom: 40px;
+    }
+    .category{
+      width: 100%;
+      .category-name-button{
+        margin: 20px 0;
+        .category-name{
+          font-size: 22px;
+        }
+        .category-button{
+          cursor: pointer;
+          background-color: black;
+          display: block;
+          padding:  0 6px 3px 6px;
+          border-radius: 50%;
+          border: none;
+          .button-arrow{
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            transform: rotate(-90deg);
+            clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
+          }
+        }
+      }
+      .category-items{
+
+        flex-direction: column;
+        .items{
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 600;
+          margin: 3px 0;
+        }
+      }
+    }
+
+    .items-closed{
+      transition: 0.5s ease-in-out;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}
+
