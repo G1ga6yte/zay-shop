@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from "react";
 import "./navigation.scss"
 import {Link} from "react-router-dom";
-import "../assets/svgs/style.css"
-
-
+import "../assets/svgs/style.css";
 
 
 const Navigation = () => {
+    
+    
+    
+    
     return (
+        
         <div className="navigation-cont">
             <div className="contacts-cont">
                 <div className="header-contacts G-flex G-flex-between G-container G-align-center">
@@ -37,7 +40,7 @@ const Navigation = () => {
                 </div>
                 <div className="nav-tools">
                     <a href="" className="tools-link icon-search"></a>
-                    <a href="" className="tools-link icon-cart-arrow-down"></a>
+                    <a href="" className="tools-link icon-cart-arrow-down"><span className="cart-count"></span></a>
                     <a href="" className="tools-link icon-user"></a>
                 </div>
             </div>

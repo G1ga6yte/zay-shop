@@ -57,6 +57,21 @@
         font-size: 22px;
         margin: 0 10px;
       }
+      .icon-cart-arrow-down{
+        position: relative;
+        .cart-count{
+          display: block;
+          position: absolute;
+          top: -6px;
+          right: -12px;
+          padding: 3px 8px;
+          border-radius: 10px;
+          font-size: 12px;
+          background-color: #E9EEF5;
+          font-weight: 600;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
     }
   }
 }
