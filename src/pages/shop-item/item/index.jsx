@@ -25,6 +25,7 @@ function SItem() {
     autoplay      : true,
     autoplaySpeed : 3000,
   };
+  
   const {id} = useParams();
   const [uniqeData, setUniqeData] = useState([]);
   

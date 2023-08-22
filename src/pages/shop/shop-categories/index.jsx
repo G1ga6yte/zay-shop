@@ -3,10 +3,13 @@ import "./shop-categories.scss";
 import {ShopData} from "./itemsData";
 import {Link} from "react-router-dom";
 import ShopItem from "../../shop-item";
+import {useCartContext} from "../../../CartContext";
 
 
 function ShopCategories() {
   
+  
+  const {addToCart} = useCartContext()
   
   const categoryList = [{
     id: 1, title: "Gender", product1: "Men", product2: "Woman", // product3: null
@@ -36,6 +39,7 @@ function ShopCategories() {
   };
   
   
+  
   return (
      <div className="shop-categories G-container G-flex G-flex-between">
        <div className="categories-block">
@@ -63,18 +67,33 @@ function ShopCategories() {
          })}
        </div>
        
-       <div className="shop-items-cont G-flex G-flex-between">
+       <div className="shop-items-cont">
+         
+         <div  className="shop-items-categories G-flex G-flex-between">
+           <div className="gender-block">
+             <span className="gender-link">All</span>
+             <span className="gender-link">Men's</span>
+             <span className="gender-link">Women's</span>
+           </div>
+           <select className="shop-selection-block">
+             <option value="featured" className="select-option">Featured</option>
+             <option value="AtoZ" className="select-option">A to Z</option>
+             <option value="item" className="select-option">Item</option>
+           </select>
+         </div>
+         
+         <div className="shop-items-block G-flex G-flex-between">
            
            {ShopData.map((element) => {
              return (
-                
+     
                 <div className="item" key={element.id}>
                   <div className="item-img">
                     <img className="img" src={element.img} alt=""/>
                     <div className="hover-content">
                       <Link to={`/shopitem/${element.id.toString()}`} className="content-items icon-heart"></Link>
                       <Link to="/shopitem" className="content-items icon-eye"></Link>
-                      <span  className="content-items icon-cart-plus"></span>
+                      <span  className="content-items icon-cart-plus "  onClick={()=> addToCart(element)}></span>
                     </div>
                   </div>
                   <div className="item-info-block">
@@ -85,7 +104,8 @@ function ShopCategories() {
                   </div>
                 </div>);
            })}
-         
+
+         </div>
          
          <div className="shop-block-pages"></div>
        

@@ -6,10 +6,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 3.6,
-    price: "$250.00",
+    price: "$290.00",
+    sum: 290.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "asjnajsnjansjnajsnja",
       color: "White / Black",
       comments: 40
     }
@@ -20,10 +22,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.2,
-    price: "$250.00",
+    price: "$280.00",
+    sum: 280.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "sdfsdfsdfsdfsdfsdf",
       color: "White / Black",
       comments: 39
     }
@@ -34,11 +38,13 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.9,
-    price: "$250.00",
+    price: "$270.00",
+    sum: 270.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
-      color: "White / Black",
+      description: "dfvgdfvdvdvdfvdfv",
+    color: "White / Black",
       comments: 38
     }
   },
@@ -48,10 +54,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 2.8,
-    price: "$250.00",
+    price: "$260.00",
+    sum: 260.00,
+    gender: "male",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 37
     }
@@ -63,9 +71,11 @@ export const ShopData = [
     sizes: "M/L/X/XL",
     rate: 3.1,
     price: "$250.00",
+    sum: 250.00,
+    gender: "male",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 36
     }
@@ -76,10 +86,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 3.7,
-    price: "$250.00",
+    price: "$240.00",
+    sum: 240.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 35
     }
@@ -90,10 +102,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.5,
-    price: "$250.00",
+    price: "$230.00",
+    sum: 230.00,
+    gender: "male",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 31
     }
@@ -104,10 +118,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.1,
-    price: "$250.00",
+    price: "$210.00",
+    sum: 210.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 30
     }
@@ -118,10 +134,12 @@ export const ShopData = [
     name: "Oupidatat non",
     sizes: "M/L/X/XL",
     rate: 2.6,
-    price: "$250.00",
+    price: "$220.00",
+    sum: 220.00,
+    gender: "female",
     info:{
       brand: "Easy Wear",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+      description: "dfvgdfvdvdvdfvdfv",
       color: "White / Black",
       comments: 33
     }

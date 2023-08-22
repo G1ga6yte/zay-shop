@@ -1,0 +1,277 @@
+.cart-block {
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+  scroll-behavior: smooth;
+
+  .items-cont{
+    width: 100%;
+    padding: 0 200px;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .buy-page{
+    width: 100%;
+    z-index: 9998;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    transition: 0.5s all ease-in-out;
+    top: -100px;
+    height: 1000%;
+    overflow: hidden !important;
+
+    .buy-block{
+      position: fixed;
+      z-index: 9999;
+      background-color: white;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      flex-direction: column;
+      padding: 50px 15px 20px 15px;
+      border-radius: 20px;
+
+
+      .close-button{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 40px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover{
+          color: #001122;
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      .paying-types{
+        padding: 15px;
+        .pay-icon{
+          font-size: 40px;
+          margin: 0 10px;
+          cursor: pointer;
+          padding: 10px;
+          border-radius: 10px;
+          &:hover{
+            outline: 3px solid #449fdb;
+
+          }
+        }
+      }
+
+      .checked-items{
+        flex-direction: column;
+        align-items: center;
+        .checked-item{
+          cursor: pointer;
+          box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+          margin: 10px 0;
+          padding: 10px 20px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 15px;
+          .checked-item-img{
+            width: 40px;
+            border-radius: 10px;
+          }
+          .item-name-color{
+            font-family: 'Roboto-Light', sans-serif;
+            flex-direction: column;
+            margin: 0 15px;
+            .checked-item-name{
+              font-size: 20px;
+            }
+            .checked-item-color{
+              color: black;
+            }
+          }
+          .checked-item-price{
+            font-family: 'Roboto-Light', sans-serif;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .item-price{
+        text-align: end;
+        font-family: 'Roboto-Light', sans-serif;
+        font-weight: 600;
+        margin: 10px 0;
+        .price-span{
+          font-size: 20px;
+          color: #555555;
+          margin-right: 20px;
+        }
+      }
+
+      .go-to-pay{
+        margin: 20px 0;
+        background-color: #59ab6e;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        color: white;
+        padding: 10px 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+          transition: 0.3s ease-in-out;
+          background-color: white;
+          outline: 2px solid #59ab6e;
+          color: #59ab6e;
+        }
+      }
+    }
+
+  }
+
+  .cart-item-block {
+    width:100%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+
+    .img-block {
+      overflow: hidden;
+      border-radius: 20px;
+
+      .item-img {
+        cursor: pointer;
+        height: 120px;
+        border-radius: 20px;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+          transition: 0.3s ease-in-out;
+          transform: translateY(50%) scale(2);
+        }
+      }
+    }
+
+    .name-desc {
+      width: 60%;
+      font-family: 'Roboto-Light', sans-serif;
+
+      .item-name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .item-description {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+      .rating-brand-color{
+        .item-brand{
+          margin: 0 20px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .options-block{
+      font-family: 'Roboto-Light', sans-serif;
+      width: 20%;
+      .item-price{
+        text-align: center;
+        display: block;
+        font-size: 28px;
+        margin: 2px 0;
+      }
+      .button-checkbox-block{
+        padding: 0 15px;
+        margin: 5px 0;
+        font-family: 'Roboto-Light', sans-serif !important;
+        align-items: center !important;
+        .delete-button{
+          font-size: 14px;
+          color: white;
+          background-color: #e74c3c;
+          border-radius: 8px;
+          padding: 8px 12px;
+          border: none;
+          line-height: 1;
+          letter-spacing: 1px;
+          cursor: pointer;
+          transition: 0.5s ease-in-out;
+          margin-right: 10px;
+          &:hover{
+            transition: 0.5s ease-in-out;
+            background-color: white;
+            color: #e74c3c;
+            outline: 1px solid #e74c3c;
+            font-weight: 500;
+          }
+        }
+        .item-checkbox{
+          width: 20px;
+          height: 20px;
+          margin: 5px;
+          cursor: pointer;
+          accent-color: #59ab6e;
+          &:checked:before{
+            background-color: white !important;
+          }
+        }
+      }
+      .buy-item-now{
+        margin: 2px auto;
+        display: block;
+        background-color: #59ab6e;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        &:hover{
+          transition: 0.5s ease-in-out;
+          background-color: white;
+          color: #59ab6e;
+          outline: 2px solid #59ab6e;
+
+        }
+      }
+    }
+  }
+
+  .buy-button{
+    padding: 8px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #59ab6e;
+    border: none;
+    width: 120px;
+    margin: 20px 0;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    &:hover{
+      transition: 0.5s ease-in-out;
+      background-color: white;
+      outline: 2px solid #59ab6e;
+      color: #59ab6e;
+    }
+    .icon-shopping-basket{
+      margin-right: 10px;
+    }
+  }
+
+  .disp-on {
+    transition: 0.5s all ease-in-out;
+
+    display: block !important;
+  }
+}

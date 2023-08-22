@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import "./navigation.scss"
 import {Link} from "react-router-dom";
 import "../assets/svgs/style.css";
+import {useCartContext} from "../CartContext";
 
 
 const Navigation = () => {
     
     
     
-    
+    const {cartCount} = useCartContext()
     return (
         
         <div className="navigation-cont">
@@ -40,7 +41,9 @@ const Navigation = () => {
                 </div>
                 <div className="nav-tools">
                     <a href="" className="tools-link icon-search"></a>
-                    <a href="" className="tools-link icon-cart-arrow-down"><span className="cart-count"></span></a>
+                    <Link  to="/cart"  className="tools-link icon-cart-arrow-down">
+                        <span className="cart-count">{cartCount}</span>
+                    </Link>
                     <a href="" className="tools-link icon-user"></a>
                 </div>
             </div>

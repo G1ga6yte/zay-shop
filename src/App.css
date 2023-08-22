@@ -1,3 +1,9 @@
+.App{
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+
 .bold{
     font-weight: bold;
 }

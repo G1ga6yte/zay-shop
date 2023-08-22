@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?vod9l9');
-  src:  url('fonts/icomoon.eot?vod9l9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?vod9l9') format('truetype'),
-    url('fonts/icomoon.woff?vod9l9') format('woff'),
-    url('fonts/icomoon.svg?vod9l9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?tqmqu');
+  src:  url('fonts/icomoon.eot?tqmqu#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tqmqu') format('truetype'),
+    url('fonts/icomoon.woff?tqmqu') format('woff'),
+    url('fonts/icomoon.svg?tqmqu#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,20 +25,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-heart:before {
-  content: "\e909";
+.icon-credit-card:before {
+  content: "\e910";
 }
-.icon-location_on:before {
-  content: "\e905";
+.icon-search:before {
+  content: "\e986";
 }
-.icon-user:before {
-  content: "\e903";
+.icon-eye:before {
+  content: "\e9ce";
 }
-.icon-phone:before {
-  content: "\e901";
+.icon-facebook:before {
+  content: "\ea90";
 }
-.icon-mail:before {
-  content: "\e900";
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-googlepay:before {
+  content: "\e90f";
+  color: #5f6368;
+}
+.icon-applepay:before {
+  content: "\e90e";
+}
+.icon-cancel:before {
+  content: "\e90c";
+}
+.icon-shopping-basket:before {
+  content: "\e90b";
+}
+.icon-cc-paypal:before {
+  content: "\e90d";
+}
+.icon-shopping-basket:before {
+  content: "\e90b";
 }
 .icon-cart-plus:before {
   content: "\e90a";
@@ -58,21 +83,21 @@
 .icon-cart-arrow-down:before {
   content: "\e902";
 }
-.icon-search:before {
-  content: "\e986";
+.icon-heart:before {
+  content: "\e909";
 }
-.icon-eye:before {
-  content: "\e9ce";
+.icon-location_on:before {
+  content: "\e905";
 }
-.icon-facebook:before {
-  content: "\ea90";
+.icon-mail:before {
+  content: "\e900";
 }
-.icon-instagram:before {
-  content: "\ea92";
+.icon-user:before {
+  content: "\e903";
 }
-.icon-twitter:before {
-  content: "\ea96";
+.icon-phone:before {
+  content: "\e901";
 }
-.icon-linkedin:before {
-  content: "\eac9";
+.icon-mail:before {
+  content: "\e900";
 }

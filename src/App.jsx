@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Shop from "./pages/shop";
 import Contact from "./pages/contact";
 import ShopItem from "./pages/shop-item";
+import Cart from "./Navigation/cartItems";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/shopitem/:id" element={<ShopItem/>}/>
+            <Route path="/cart" element={<Cart/>}/>
         </Routes>
         <Footer />
         
