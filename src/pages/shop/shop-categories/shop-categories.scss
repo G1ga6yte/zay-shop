@@ -58,8 +58,28 @@
     }
 
   }
+  .zoom-img-block{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    .zoom-img-cont{
+      margin: 50px auto;
+      .zoom-img{
+        height: 100%;
+        border-radius: 30px;
+      }
+    }
+  }
   .shop-items-cont{
     width: 75%;
+
+
 
       .shop-items-categories{
         margin-bottom: 30px;

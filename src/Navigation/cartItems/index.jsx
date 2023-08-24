@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useRef, useEffect, useState} from "react";
 import {useCartContext} from "../../CartContext";
 import "./cartItems.scss";
 
@@ -13,13 +13,10 @@ function Cart() {
     return stars;
   };
   
-  const {cartItem} = useCartContext();
-  const {removeFromCart} = useCartContext();
-  const {itemCheck} = useCartContext();
-  const {checkedItems} = useCartContext();
-  const {sum} = useCartContext()
+  const {cartItem, removeFromCart, itemCheck, checkedItems, sum} = useCartContext();
   
   let [buyPage, setBuyPage] = useState(false);
+  const modalRef = useRef(null)
   
   
   function toggleShop() {
@@ -33,19 +30,35 @@ function Cart() {
     }
   }
   
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      if (buyPage === true) {
-        toggleShop();
+  useEffect(()=>{
+    if(buyPage === true){
+      const handleClickOutside = (event) =>{
+        
+          if(modalRef.current && modalRef.current.contains(event.target)){
+            toggleShop()
+          }
+        
+      }
+      window.addEventListener("mousedown", handleClickOutside)
+      return ()=>{
+        window.removeEventListener("mousedown", handleClickOutside)
       }
     }
-  });
+  }, [buyPage])
+  
+  // window.addEventListener("keydown", (event) => {
+  //   if (event.key === "Escape") {
+  //     if (buyPage === true) {
+  //       toggleShop();
+  //     }
+  //   }
+  // });
   
   return (
      <div className="cart-block G-flex">
        
        <div className={`buy-page ${buyPage ? "disp-on" : ""}`}>
-         <div className="buy-block G-flex">
+         <div   className="buy-block G-flex">
             <div onClick={toggleShop} className="close-button icon-cancel"></div>
            <div className="paying-types G-flex G-flex-between">
               <span className="pay-icon icon-cc-paypal"></span>

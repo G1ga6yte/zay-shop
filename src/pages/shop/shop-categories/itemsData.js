@@ -19,7 +19,7 @@ export const ShopData = [
   {
     id:2,
     img: Img.shop02,
-    name: "Oupidatat non",
+    name: "Bupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.2,
     price: "$280.00",
@@ -51,7 +51,7 @@ export const ShopData = [
   {
     id:4,
     img: Img.shop04,
-    name: "Oupidatat non",
+    name: "Aupidatat non",
     sizes: "M/L/X/XL",
     rate: 2.8,
     price: "$260.00",
@@ -83,7 +83,7 @@ export const ShopData = [
   {
     id:6,
     img: Img.shop06,
-    name: "Oupidatat non",
+    name: "Gupidatat non",
     sizes: "M/L/X/XL",
     rate: 3.7,
     price: "$240.00",
@@ -115,7 +115,7 @@ export const ShopData = [
   {
     id:8,
     img: Img.shop08,
-    name: "Oupidatat non",
+    name: "Tupidatat non",
     sizes: "M/L/X/XL",
     rate: 4.1,
     price: "$210.00",
@@ -131,7 +131,7 @@ export const ShopData = [
   {
     id:9,
     img: Img.shop09,
-    name: "Oupidatat non",
+    name: "Cupidatat non",
     sizes: "M/L/X/XL",
     rate: 2.6,
     price: "$220.00",

@@ -1,15 +1,39 @@
-import {useState, useRef} from "react";
+import {useState} from "react";
 import "./shop-categories.scss";
 import {ShopData} from "./itemsData";
 import {Link} from "react-router-dom";
-import ShopItem from "../../shop-item";
 import {useCartContext} from "../../../CartContext";
+import * as React from "react";
+import {Box, Button, Typography, Modal} from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+
+const style = {
+  position : "absolute",
+  top      : "50%",
+  left     : "50%",
+  transform: "translate(-50%, -50%)",
+  width    : 400,
+  bgcolor  : "background.paper",
+  border   : "2px solid #000",
+  boxShadow: 24,
+  p        : 4,
+};
 
 
 function ShopCategories() {
   
+  const [category, setCategory] = useState(null);
+  const [gender, setGender] = useState(null);
+  const [sort, setSort] = useState("AtoZ");
+  const [image, setImage] = useState(null);
   
-  const {addToCart} = useCartContext()
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
+  const {addToCart} = useCartContext();
   
   const categoryList = [{
     id: 1, title: "Gender", product1: "Men", product2: "Woman", // product3: null
@@ -19,7 +43,6 @@ function ShopCategories() {
     id: 3, title: "Product", product1: "Bag", product2: "Sweater", product3: "Sunglass",
   }];
   
-  let [category, setCategory] = useState(null);
   
   function toggleCategory(categoryID) {
     if (category === categoryID) {
@@ -38,6 +61,16 @@ function ShopCategories() {
     return stars;
   };
   
+  
+  let data = ShopData;
+  
+  if (gender === null) {
+    data = ShopData;
+  } else if (gender === true) {
+    data = ShopData.filter(item => item.gender === "male");
+  } else if (gender === false) {
+    data = ShopData.filter(item => item.gender === "female");
+  }
   
   
   return (
@@ -67,44 +100,83 @@ function ShopCategories() {
          })}
        </div>
        
+       <div>
+         <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+         >
+           <Box sx={style}>
+             <IconButton >
+               <CloseIcon onClick={handleClose} />
+             </IconButton>
+             <img src={image} alt=""/>
+           </Box>
+         </Modal>
+       </div>
+       
        <div className="shop-items-cont">
          
-         <div  className="shop-items-categories G-flex G-flex-between">
+         
+         <div className="shop-items-categories G-flex G-flex-between">
            <div className="gender-block">
-             <span className="gender-link">All</span>
-             <span className="gender-link">Men's</span>
-             <span className="gender-link">Women's</span>
+             <span onClick={() => {
+               setGender(null);
+             }} className="gender-link">All</span>
+             <span onClick={() => {
+               setGender(true);
+             }} className="gender-link">Men's</span>
+             <span onClick={() => {
+               setGender(false);
+             }} className="gender-link">Women's</span>
            </div>
-           <select className="shop-selection-block">
-             <option value="featured" className="select-option">Featured</option>
+           <select onChange={(event) => {
+             setSort(event.target.value);
+           }} value={sort} className="shop-selection-block">
              <option value="AtoZ" className="select-option">A to Z</option>
-             <option value="item" className="select-option">Item</option>
+             <option value="LowToHigh" className="select-option">Low to High</option>
+             <option value="HighToLow" className="select-option">High to Low</option>
            </select>
          </div>
          
          <div className="shop-items-block G-flex G-flex-between">
            
-           {ShopData.map((element) => {
-             return (
-     
-                <div className="item" key={element.id}>
-                  <div className="item-img">
-                    <img className="img" src={element.img} alt=""/>
-                    <div className="hover-content">
-                      <Link to={`/shopitem/${element.id.toString()}`} className="content-items icon-heart"></Link>
-                      <Link to="/shopitem" className="content-items icon-eye"></Link>
-                      <span  className="content-items icon-cart-plus "  onClick={()=> addToCart(element)}></span>
-                    </div>
-                  </div>
-                  <div className="item-info-block">
-                    <Link to="/shopItem" className="item-name">{element.name}</Link>
-                    <span className="item-sizes">{element.sizes}</span>
-                    <div className="item-stars">{renderStars(Math.round(element.rate))}</div>
-                    <span className="item-price">{element.price}</span>
-                  </div>
-                </div>);
-           })}
-
+           {
+             data.sort((a, b) => {
+                  if (sort === "AtoZ") {
+                    return a.name.localeCompare(b.name);
+                  } else if (sort === "LowToHigh") {
+                    return a.sum - b.sum;
+                  } else if (sort === "HighToLow") {
+                    return b.sum - a.sum;
+                  }
+                })
+                .map((element) => {
+                  return (
+                     
+                     <div className="item" key={element.id}>
+                       <div className="item-img">
+                         <img className="img" src={element.img} alt=""/>
+                         <div className="hover-content">
+                           <Link to={`/shopitem/${element.id.toString()}`} className="content-items icon-heart"></Link>
+                           <span onClick={() => {
+                             handleOpen()
+                             setImage(element.img);
+                           }} className="content-items icon-eye"></span>
+                           <span className="content-items icon-cart-plus " onClick={() => addToCart(element)}></span>
+                         </div>
+                       </div>
+                       <div className="item-info-block">
+                         <Link to="/shopItem" className="item-name">{element.name}</Link>
+                         <span className="item-sizes">{element.sizes}</span>
+                         <div className="item-stars">{renderStars(Math.round(element.rate))}</div>
+                         <span className="item-price">{element.price}</span>
+                       </div>
+                     </div>);
+                })
+           }
+         
          </div>
          
          <div className="shop-block-pages"></div>
