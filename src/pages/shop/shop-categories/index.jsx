@@ -3,23 +3,8 @@ import "./shop-categories.scss";
 import {ShopData} from "./itemsData";
 import {Link} from "react-router-dom";
 import {useCartContext} from "../../../CartContext";
-import * as React from "react";
-import {Box, Button, Typography, Modal} from "@mui/material";
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import ImageModal from "./image-modal";
 
-
-const style = {
-  position : "absolute",
-  top      : "50%",
-  left     : "50%",
-  transform: "translate(-50%, -50%)",
-  width    : 400,
-  bgcolor  : "background.paper",
-  border   : "2px solid #000",
-  boxShadow: 24,
-  p        : 4,
-};
 
 
 function ShopCategories() {
@@ -29,11 +14,8 @@ function ShopCategories() {
   const [sort, setSort] = useState("AtoZ");
   const [image, setImage] = useState(null);
   
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
   
-  const {addToCart} = useCartContext();
+  const {addToCart, open, handleOpen} = useCartContext();
   
   const categoryList = [{
     id: 1, title: "Gender", product1: "Men", product2: "Woman", // product3: null
@@ -42,7 +24,6 @@ function ShopCategories() {
   }, {
     id: 3, title: "Product", product1: "Bag", product2: "Sweater", product3: "Sunglass",
   }];
-  
   
   function toggleCategory(categoryID) {
     if (category === categoryID) {
@@ -61,9 +42,7 @@ function ShopCategories() {
     return stars;
   };
   
-  
   let data = ShopData;
-  
   if (gender === null) {
     data = ShopData;
   } else if (gender === true) {
@@ -71,6 +50,7 @@ function ShopCategories() {
   } else if (gender === false) {
     data = ShopData.filter(item => item.gender === "female");
   }
+  
   
   
   return (
@@ -101,19 +81,7 @@ function ShopCategories() {
        </div>
        
        <div>
-         <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-         >
-           <Box sx={style}>
-             <IconButton >
-               <CloseIcon onClick={handleClose} />
-             </IconButton>
-             <img src={image} alt=""/>
-           </Box>
-         </Modal>
+         <ImageModal img={image}/>
        </div>
        
        <div className="shop-items-cont">

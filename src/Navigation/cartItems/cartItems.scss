@@ -64,38 +64,6 @@
         }
       }
 
-      .checked-items{
-        flex-direction: column;
-        align-items: center;
-        .checked-item{
-          cursor: pointer;
-          box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-          margin: 10px 0;
-          padding: 10px 20px;
-          justify-content: center;
-          align-items: center;
-          border-radius: 15px;
-          .checked-item-img{
-            width: 40px;
-            border-radius: 10px;
-          }
-          .item-name-color{
-            font-family: 'Roboto-Light', sans-serif;
-            flex-direction: column;
-            margin: 0 15px;
-            .checked-item-name{
-              font-size: 20px;
-            }
-            .checked-item-color{
-              color: black;
-            }
-          }
-          .checked-item-price{
-            font-family: 'Roboto-Light', sans-serif;
-            font-weight: 600;
-          }
-        }
-      }
 
       .item-price{
         text-align: end;

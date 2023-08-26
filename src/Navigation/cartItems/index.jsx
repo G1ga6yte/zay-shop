@@ -1,6 +1,6 @@
-import {useRef, useEffect, useState} from "react";
 import {useCartContext} from "../../CartContext";
 import "./cartItems.scss";
+import CustomizedDialogs from "./dialog-page";
 
 function Cart() {
   
@@ -13,83 +13,15 @@ function Cart() {
     return stars;
   };
   
-  const {cartItem, removeFromCart, itemCheck, checkedItems, sum} = useCartContext();
+  const {cartItem, removeFromCart, itemCheck, handleDialogOpen, countAdd, countMin} = useCartContext();
   
-  let [buyPage, setBuyPage] = useState(false);
-  const modalRef = useRef(null)
-  
-  
-  function toggleShop() {
-    if (buyPage === true) {
-      setBuyPage(false);
-      window.onscroll = ()=>{}
-    } else {
-      setBuyPage(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setTimeout(()=>{window.onscroll = function () { window.scrollTo(0, 0); };}, 1000)
-    }
-  }
-  
-  useEffect(()=>{
-    if(buyPage === true){
-      const handleClickOutside = (event) =>{
-        
-          if(modalRef.current && modalRef.current.contains(event.target)){
-            toggleShop()
-          }
-        
-      }
-      window.addEventListener("mousedown", handleClickOutside)
-      return ()=>{
-        window.removeEventListener("mousedown", handleClickOutside)
-      }
-    }
-  }, [buyPage])
-  
-  // window.addEventListener("keydown", (event) => {
-  //   if (event.key === "Escape") {
-  //     if (buyPage === true) {
-  //       toggleShop();
-  //     }
-  //   }
-  // });
   
   return (
      <div className="cart-block G-flex">
        
-       <div className={`buy-page ${buyPage ? "disp-on" : ""}`}>
-         <div   className="buy-block G-flex">
-            <div onClick={toggleShop} className="close-button icon-cancel"></div>
-           <div className="paying-types G-flex G-flex-between">
-              <span className="pay-icon icon-cc-paypal"></span>
-             <span className="pay-icon icon-googlepay"></span>
-             <span className="pay-icon icon-applepay"></span>
-             <span className="pay-icon icon-credit-card"></span>
-
-           </div>
-           <div className="checked-items G-flex">
-             {checkedItems.map((el)=>{
-               return <div className="checked-item G-flex G-flex-between">
-                 <img className="checked-item-img" src={el.img} alt=""/>
-                 <div className="item-name-color G-flex">
-                    <h3 className="checked-item-name">{el.name}</h3>
-                    <span className="checked-item-color">{el.info.color}</span>
-                 </div>
-                 <span className="checked-item-price">
-                   {el.price}
-                 </span>
-               </div>
-             })}
-           </div>
-           
-           <div className="item-price">
-              Total Sum : <span className="price-span">${sum}.00</span>
-           </div>
-           <button className="go-to-pay">
-              Go To Pay
-           </button>
-         </div>
-       </div>
+       
+       <CustomizedDialogs/>
+       
        
        <div className="items-cont G-container G-flex">
          {cartItem.map((element) => {
@@ -107,6 +39,11 @@ function Cart() {
                     <div className="rating-block">{renderStars(Math.round(element.rate))}</div>
                     <span className="item-brand">{element.info.brand}</span>
                     <span className="item-color">{element.info.color}</span>
+                    <div className="counting-block G-flex">
+                      <button onClick={()=> countMin(element)} className="">-</button>
+                      <span>{element.count}</span>
+                      <button onClick={()=>countAdd(element)} className="">+</button>
+                    </div>
                   </div>
                 </div>
                 
@@ -129,7 +66,8 @@ function Cart() {
          })}
          
          
-         <button onClick={toggleShop} className="buy-button"><span className="icon-shopping-basket"></span>Buy</button>
+         <button onClick={handleDialogOpen} className="buy-button"><span className="icon-shopping-basket"></span>Buy
+         </button>
        </div>
      </div>
   );
