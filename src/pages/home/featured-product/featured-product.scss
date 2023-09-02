@@ -1,63 +1,170 @@
-.featured-product-block{
+@import "../../../assets/styles/index";
+
+.featured-product-block {
   background-color: #E9EEF5;
   padding: 60px;
-  .featured-h2{
-    text-align: center;
-    font-size: 48px;
-    font-family: 'Roboto-Light', sans-serif;
-    font-weight: 200;
+
+  @include screen($wide) {
+    padding: 45px;
   }
-  .featured-prg{
-    width: 600px;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.4;
-    font-family: 'Roboto-Light', sans-serif;
+  @include screen($tablet-w) {
+    padding: 20px;
+  }
+  @include screen($tablet-m){
+    padding: 20px 0;
   }
 
-  .featured-items{
-    display: flex;
-    justify-content: space-between;
-    .feature-item{
-      width: 30%;
-      background-color: white;
-      border: 1px solid #DFDFDF;
-      border-radius: 5px;
-      overflow: hidden;
-      padding-bottom: 40px;
-      .item-img{
-        width: 100%;
+  .featured-product-cont {
+    .featured-h2 {
+      text-align: center;
+      font-size: 48px;
+      font-family: 'Roboto-Light', sans-serif;
+      font-weight: 200;
+      @include screen($wide) {
+        font-size: 40px;
       }
-      .rate-price{
-        margin: 15px;
-        .price{
-          color: #BCBCBC;
-          font-family: 'Roboto-Light', sans-serif;
-          font-weight: 700;
-          font-size: 18px;
-        }
-      }
-      .ft-h2{
+      @include screen($tablet-l) {
         font-size: 30px;
-        font-family: 'Roboto-Light', sans-serif;
-        margin: 0 15px;
       }
-      .ft-prg{
-        font-size: 18px;
-        font-family: 'Roboto-Light', sans-serif;
-        margin: 15px;
-        font-weight: 700;
-        line-height: 1.6;
+      @include screen($tablet) {
+        font-size: 26px;
       }
-      .ft-reviews{
-        margin: 15px;
-        color: #bcbcbc;
-        font-size: 18px;
-        font-family: 'Roboto-Light', sans-serif;
-        font-weight: 500;
+    }
 
+    .featured-prg {
+      width: 50%;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.4;
+      font-family: 'Roboto-Light', sans-serif;
+      @include screen($wide) {
+        font-size: 16px;
+      }
+      @include screen($tablet-l) {
+        font-size: 14px;
+        width: 65%;
+      }
+      @include screen($tablet) {
+        font-size: 12px;
+        width: 80%;
+      }
+    }
+
+    .featured-items {
+      display: flex;
+      justify-content: space-between;
+      @include screen($tablet) {
+        flex-direction: column;
+      }
+
+      .feature-item {
+        width: 30%;
+        background-color: white;
+        border: 1px solid #DFDFDF;
+        border-radius: 5px;
+        overflow: hidden;
+        padding-bottom: 40px;
+        @include screen($wide) {
+          width: 32%;
+          padding-bottom: 20px;
+        }
+        @include screen($tablet) {
+          width: 70%;
+          margin: 10px auto;
+        }
+        @include screen($tablet-m) {
+          width: 80%;
+        }
+        @include screen($mobile-m){
+          width: 90%;
+        }
+
+        .item-img {
+          width: 100%;
+        }
+
+        .rate-price {
+          margin: 15px;
+          @include screen($wide) {
+            margin: 10px;
+          }
+          @include screen($tablet) {
+          }
+
+          .icon-star {
+            @include screen($tablet-l) {
+              font-size: 20px;
+            }
+            @include screen($tablet) {
+              font-size: 16px;
+            }
+          }
+
+          .price {
+            color: #BCBCBC;
+            font-family: 'Roboto-Light', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            @include screen($wide) {
+              font-size: 16px;
+            }
+            @include screen($tablet-l) {
+              font-size: 14px;
+            }
+            @include screen($tablet) {
+              font-size: 12px;
+            }
+          }
+        }
+
+        .ft-h2 {
+          font-size: 30px;
+          font-family: 'Roboto-Light', sans-serif;
+          margin: 0 15px;
+          @include screen($wide) {
+            font-size: 22px;
+          }
+          @include screen($tablet-l) {
+            font-size: 18px;
+          }
+          @include screen($tablet) {
+            font-size: 16px;
+          }
+        }
+
+        .ft-prg {
+          font-size: 18px;
+          font-family: 'Roboto-Light', sans-serif;
+          margin: 15px;
+          font-weight: 700;
+          line-height: 1.6;
+          @include screen($wide) {
+            font-size: 16px;
+          }
+          @include screen($tablet-l) {
+            font-size: 14px;
+          }
+          @include screen($tablet) {
+            font-size: 12px;
+          }
+        }
+
+        .ft-reviews {
+          margin: 15px;
+          color: #bcbcbc;
+          font-size: 18px;
+          font-family: 'Roboto-Light', sans-serif;
+          font-weight: 500;
+          @include screen($wide) {
+            font-size: 16px;
+          }
+          @include screen($tablet-l) {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
+
 }

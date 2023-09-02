@@ -1,34 +1,54 @@
-.shop-item-block{
+@import "../../../assets/styles/index";
+
+.shop-item-block {
   background-color: #E9EEF5;
-  .shop-item-cont{
+
+  .shop-item-cont {
     width: 100%;
-    padding: 50px 0;
-    .images-block{
+    padding: 50px 10px;
+    @include screen($tablet) {
+      flex-direction: column;
+    }
+
+    .images-block {
       width: 40%;
-      .item-img{
+      @include screen($tablet-l) {
+        width: 47%;
+      }
+      @include screen($tablet) {
+        width: 95%;
+        margin: 10px auto;
+      }
+
+      .item-img {
         width: 100%;
         background-color: white;
         margin-bottom: 30px;
-        border: 1px solid rgba(0,0,0,.125);
+        border: 1px solid rgba(0, 0, 0, .125);
         padding: 10px 50px;
       }
-      .item-slider-block{
+
+      .item-slider-block {
         width: 100% !important;
         overflow: hidden;
         padding: 0 30px;
+
         .slick-list {
           width: 100% !important;
         }
-        .slick-slide{
+
+        .slick-slide {
           padding: 0 15px;
         }
-        .slider-img{
-          border: 1px solid rgba(0,0,0,.125);
+
+        .slider-img {
+          border: 1px solid rgba(0, 0, 0, .125);
           padding: 5px;
           background-color: white;
         }
-        .slick-arrow{
-          &:before{
+
+        .slick-arrow {
+          &:before {
             content: " ";
             background-color: black;
             display: block;
@@ -37,126 +57,290 @@
             clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
           }
         }
-        .slick-next{
+
+        .slick-next {
           transform: rotate(180deg);
         }
       }
     }
-    .item-info-block{
-      border: 1px solid rgba(0,0,0,.125);
+
+    .item-info-block {
+      border: 1px solid rgba(0, 0, 0, .125);
       background-color: white;
       width: 57%;
       padding: 20px;
       font-family: 'Roboto-Light', sans-serif;
-      .item-name{
-        font-size: 30px;
+      @include screen($tablet-l) {
+        padding: 15px;
+        width: 50%;
       }
-      .item-price{
+      @include screen($tablet) {
+        width: 95%;
+        margin: 0 auto;
+      }
+      @include screen($tablet-m){
+        padding: 10px;
+      }
+
+
+      .item-name {
+        font-size: 30px;
+        @include screen($tablet-l) {
+          font-size: 26px;
+        }
+        @include screen($tablet-m){
+          font-size: 22px;
+          text-align: center;
+        }
+      }
+
+      .item-price {
         font-size: 22px;
         margin-top: 20px;
         display: block;
         font-weight: 600;
+        @include screen($tablet-l) {
+          font-size: 20px;
+          margin-top: 15px;
+        }
+        @include screen($tablet-m){
+          font-size: 16px;
+          margin-top: 10px;
+        }
       }
-      .ratings-block{
+
+      .ratings-block {
         align-items: center;
         justify-content: left;
         font-size: 18px;
         font-weight: 600;
         margin-top: 20px;
-        .rating-stars{
+        @include screen($tablet-l) {
+          font-size: 16px;
+          margin-top: 15px;
+        }
+        @include screen($tablet-m){
+          font-size: 14px;
+          margin-top: 10px;
+        }
+
+        .rating-stars {
           margin: 0 10px;
+          @include screen($tablet-m){
+            margin: 0 10px 0 0;
+          }
         }
       }
-      .brand-prg{
+
+      .brand-prg {
         margin-top: 20px;
         font-size: 16px;
         font-weight: 500;
         font-family: 'Roboto-Medium', sans-serif;
-        .brand-span{
+        @include screen($tablet-l) {
+          margin-top: 15px;
+          font-size: 14px;
+        }
+        @include screen($tablet-m){
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .brand-span {
           font-family: 'Roboto-Light', sans-serif;
           font-weight: 600;
           margin-left: 5px;
           font-size: 18px;
           color: #bcbcbc;
+          @include screen($tablet-l) {
+            font-size: 16px;
+          }
+          @include screen($tablet-m){
+            font-size: 14px;
+          }
         }
       }
-      .description-span{
+
+      .description-span {
         display: block;
         font-family: 'Roboto-Medium', sans-serif;
         font-weight: 500;
         font-size: 16px;
         margin-top: 20px;
+        @include screen($tablet-l) {
+          font-size: 14px;
+          margin-top: 15px;
+        }
+        @include screen($tablet-m){
+          font-size: 12px;
+          margin-top: 10px;
+        }
       }
-      .description-prg{
+
+      .description-prg {
         font-size: 18px;
         line-height: 1.4;
         margin-top: 10px;
         font-weight: 600;
+        @include screen($tablet-l) {
+          font-size: 16px;
+        }
+        @include screen($tablet-m){
+          font-size: 14px;
+          margin-top: 5px;
+        }
       }
-      .available-color-prg{
+
+      .available-color-prg {
         font-family: 'Roboto-Medium', sans-serif;
         margin-top: 20px;
-        .item-colors{
+        @include screen($tablet-l) {
+          margin-top: 15px;
+        }
+        @include screen($tablet-m){
+margin-top: 10px;
+        }
+
+        .item-colors {
           font-family: 'Roboto-Light', sans-serif;
           font-weight: 600;
           margin-left: 5px;
           font-size: 18px;
           color: #bcbcbc;
+          @include screen($tablet-l) {
+            font-size: 16px;
+          }
+          @include screen($tablet-m){
+            font-size: 14px;
+          }
         }
       }
-      .specification-block{
+
+      .specification-block {
         margin-top: 20px;
         font-family: 'Roboto-Medium', sans-serif;
         line-height: 2;
-        .specifications{
+        @include screen($tablet-l) {
+          margin-top: 15px;
+        }
+        @include screen($tablet-m){
+margin-top: 10px;
+        }
+
+        .specifications {
           list-style: none;
-          .spec{
+
+          .spec {
             font-family: 'Roboto-Light', sans-serif;
             font-weight: 600;
             line-height: 1.4;
             font-size: 18px;
+            @include screen($tablet-l) {
+              font-size: 16px;
+            }
+            @include screen($tablet-m){
+              font-size: 14px;
+            }
           }
         }
       }
-      .size-quantity-block{
+
+      .size-quantity-block {
         margin-top: 30px;
         align-items: center;
-        .size{
-          font-size: 18px;
-          font-weight: 600;
-          margin-right: 10px;
+        @include screen($tablet-l) {
+          margin-top: 20px;
         }
-        .size-button{
-          cursor: pointer;
-          border: none;
-          background-color: #59ab6e;
-          font-size: 16px;
-          color: white;
-          margin: 0 5px;
-          padding: 8px 10px;
-          border-radius: 5px;
+        @include screen($tablet-w) {
+          flex-direction: column;
+          align-items: start;
+        }
+        @include screen($tablet-m){
+margin-top: 10px;
         }
 
-        .quantity{
-          font-size: 18px;
-          font-weight: 600;
-          margin: 0 10px;
+        .size-block {
+          @include screen($tablet-w) {
+            margin: 5px 0;
+          }
+
+          .size {
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 10px;
+            @include screen($tablet-l) {
+              font-size: 16px;
+              margin-right: 5px;
+            }
+            @include screen($tablet-m){
+              font-size: 14px;
+            }
+          }
+
+          .size-button {
+            cursor: pointer;
+            border: none;
+            background-color: #59ab6e;
+            font-size: 16px;
+            color: white;
+            margin: 0 5px;
+            padding: 8px 10px;
+            border-radius: 5px;
+            @include screen($tablet-l) {
+              font-size: 14px;
+              padding: 6px 8px;
+              margin: 0 2px;
+            }
+            @include screen($tablet-m){
+              font-size: 12px;
+              padding: 4px 6px;
+            }
+          }
+
+          .quantity {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 10px;
+            @include screen($tablet-l) {
+              font-size: 16px;
+            }
+            @include screen($tablet-m){
+              font-size: 14px;
+            }
+          }
+
+          .quant {
+            font-size: 14px;
+            background-color: gray;
+            color: white;
+            font-family: 'Roboto-Medium', sans-serif;
+            font-weight: 600;
+            padding: 3px 8px;
+            margin: 0 5px;
+            display: block;
+            border-radius: 5px;
+            @include screen($tablet-l) {
+              font-size: 13px;
+            }
+            @include screen($tablet-m){
+              font-size: 12px;
+            }
+          }
         }
-        .quant{
-          font-size: 14px;
-          background-color: gray;
-          color: white;
-          font-family: 'Roboto-Medium', sans-serif;
-          font-weight: 600;
-          padding: 3px 8px;
-          margin: 0 5px;
-          display: block;
-          border-radius: 5px;
-        }
+
+
       }
-      .buttons-block{
+
+      .buttons-block {
         margin-top: 30px;
-        .button{
+        @include screen($tablet-l) {
+          margin-top: 20px;
+        }
+        @include screen($tablet-m){
+margin-top: 10px;
+        }
+
+        .button {
           cursor: pointer;
           width: 48%;
           background-color: #59ab6e;
@@ -165,6 +349,13 @@
           border: none;
           padding: 12px;
           border-radius: 10px;
+          @include screen($tablet-l) {
+            font-size: 18px;
+          }
+          @include screen($tablet-m){
+            font-size: 16px;
+            padding: 8px;
+          }
         }
       }
     }

@@ -1,0 +1,120 @@
+@import "../../../../assets/styles/index";
+.categories-block{
+    width: 23%;
+  @include screen($tablet-l){
+    width: 16%;
+  }
+  @include screen($tablet-w){
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  @include screen($tablet){
+    width: 95%;
+    flex-wrap: wrap;
+  }
+    .categories-h2{
+      margin-bottom: 40px;
+      @include screen($tablet-l){
+        font-size: 24px;
+      }
+      @include screen($tablet-w){
+        margin: 0;
+      }
+      @include screen($tablet){
+        font-size: 20px;
+      }
+      @include screen($tablet-m){
+        width: 90%;
+        margin: 10px 0;
+      }
+    }
+    .category{
+      width: 100%;
+      @include screen($tablet-w){
+        width: 18%;
+      }
+      @include screen($tablet-m){
+        width: 30%;
+      }
+
+      .category-name-button{
+        background-color: white;
+        position: relative;
+        z-index: 111;
+        margin: 20px 0;
+        @include screen($tablet-w){
+          margin: 0;
+        }
+        .category-name{
+          font-size: 22px;
+          @include screen($tablet-l){
+            font-size: 18px;
+          }
+          @include screen($tablet){
+            font-size: 16px;
+          }
+        }
+        .category-button{
+          cursor: pointer;
+          background-color: black;
+          display: block;
+          border-radius: 50%;
+          border: none;
+          @include screen($tablet-m){
+background-color: white;
+          }
+          .button-arrow{
+            transition: 0.3s ease;
+            margin: 3px 6px 6px 6px;
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            transform: rotate(-90deg);
+            clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
+            @include screen($tablet){
+              width: 10px;
+              height: 10px;
+              margin: 1px 4px 3px 4px;
+            }
+            @include screen($tablet-m){
+              background-color: black;
+            }
+          }
+        }
+      }
+      .category-items{
+        height: 80px;
+        flex-direction: column;
+        transition: 0.5s ease-in-out;
+        @include screen($tablet){
+          height: 50px;
+        }
+        .items{
+          cursor: pointer;
+          font-size: 16px;
+          font-weight: 600;
+          margin: 3px 0;
+          @include screen($tablet-l){
+            font-size: 14px;
+          }
+          @include screen($tablet){
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .items-closed{
+      transition: 0.5s ease-in-out;
+      height: 1px !important;
+      overflow: hidden;
+    }
+    .arrow-rotated{
+      margin: 6px 6px 3px 6px !important;
+      transition: 0.3s ease;
+      transform: rotate(-270deg) !important;
+    }
+
+  }

@@ -1,35 +1,90 @@
+@import "../../../assets/styles/index";
 .slider-block {
   background-color: #EFEFEF;
   padding: 50px 0;
   .slider-container {
     position: relative;
+    width: 100%;
+
+    @include screen($tablet-m){
+      padding: 0 10px;
+    }
     .home-slide-Item{
-      padding: 20px;
+      padding:20px 50px;
       display: flex !important;
       justify-content: center;
       align-items: center;
+      @include screen($wide-s){
+        padding: 20px 60px;
+      }
+      @include screen($tablet){
+        flex-direction: column-reverse;
+      }
+      @include screen($tablet-m){
+        padding: 20px;
+      }
       .item-text-block{
-        max-width: 40%;
+        width: 50%;
+        @include screen($tablet){
+          width: 90%;
+          margin: 0 auto;
+        }
+
         .item-header{
           font-size: 48px;
           font-family: 'Roboto-Light', sans-serif;
           font-weight: 200;
+          @include screen($wide-s){
+            font-size: 35px;
+          }
+          @include screen($tablet-m){
+            font-size: 28px;
+          }
         }
         .item-description{
           font-size: 30px;
           font-family: 'Roboto-Light', sans-serif;
           margin: 10px 0;
           font-weight: 700;
+          @include screen($wide-s){
+            font-size: 24px;
+          }
+          @include screen($tablet-m){
+            font-size: 20px;
+          }
         }
         .item-prg{
           font-family: 'Roboto-Light', sans-serif;
           font-size: 18px;
           margin: 16px 0;
           line-height: 1.4;
+          @include screen($wide-s){
+            font-size: 16px;
+          }
+          @include screen($tablet-m){
+            font-size: 14px;
+          }
         }
       }
       .item-img{
-        display: block;
+        max-width: 600px;
+        min-width: 300px;
+        max-height: 600px;
+        min-height: 300px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        @include screen($tablet){
+          height: 250px;
+          width: 250px;
+        }
+        //@include screen($wide-m){
+        //  width: 500px;
+        //}
+        //@include screen($wide){
+        //  width: 420px;
+        //}
       }
     }
 
@@ -41,7 +96,18 @@
       display: block;
       transform: rotate(180deg);
       clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
-
+      position: absolute;
+      right: 30px;
+      @include screen($wide-s){
+        width: 40px;
+        height: 40px;
+      }
+      @include screen($tablet-m){
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        top: 100px;
+      }
     }
 
     .slick-prev:before {
@@ -51,6 +117,18 @@
       height: 50px;
       display: block;
       clip-path: polygon(65% 15%, 30% 50%, 65% 85%, 50% 100%, 0% 50%, 50% 0);
+      position: absolute;
+      left: 30px;
+      @include screen($wide-s){
+        width: 40px;
+        height: 40px;
+      }
+      @include screen($tablet-m){
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        top: 100px;
+      }
     }
 
     .slick-dots li {

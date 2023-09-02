@@ -1,11 +1,23 @@
-
+@import "../../../assets/styles/index";
 .Categories-cont{
-  padding: 30px 0;
+  padding: 30px 0 !important;
   .categories-h2{
     font-size: 48px;
     font-family: 'Roboto-Light', sans-serif;
     font-weight: 100;
     text-align: center;
+    @include screen($wide-s){
+      font-size: 40px;
+    }
+    @include screen($tablet-w){
+      font-size: 30px;
+    }
+    @include screen($tablet){
+      font-size: 26px;
+    }
+    @include screen($tablet-m){
+      font-size: 22px;
+    }
   }
   .categories-prg{
     font-size: 18px;
@@ -14,13 +26,42 @@
     text-align: center;
     font-family: 'Roboto-Light', sans-serif;
     font-weight: 600;
+    @include screen($wide-s){
+      font-size: 16px;
+    }
+    @include screen($tablet-w){
+      font-size: 14px;
+    }
+    @include screen($tablet-m){
+      font-size: 12px;
+    }
   }
   .categories-block{
     padding: 10px;
+    width: 100% !important;
+    @include screen($tablet){
+      flex-direction: column;
+    }
     .categories-item{
       padding: 40px 20px;
+      @include screen($tablet){
+        width: 90% !important;
+        margin: 0 auto;
+        padding: 20px;
+      }
       .item-img{
         border-radius: 50%;
+        @include screen($tablet){
+          width: 50%;
+          margin: 0 auto;
+          display: block;
+        }
+        @include screen($tablet-m){
+          width: 60%;
+        }
+        @include screen($mobile-m){
+          width: 70%;
+        }
       }
       .item-name{
         text-align: center;
@@ -28,6 +69,9 @@
         font-weight: 200;
         font-size: 20px;
         margin: 20px auto;
+        @include screen($tablet){
+          font-size: 16px;
+        }
       }
       .go-shop-button{
         font-size: 18px;
@@ -40,6 +84,10 @@
         border-radius: 5px;
         display: block;
         margin: 0 auto;
+        @include screen($tablet){
+          font-size: 16px;
+          padding: 6px 10px;
+        }
       }
     }
   }

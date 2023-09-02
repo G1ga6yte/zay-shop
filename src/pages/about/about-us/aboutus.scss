@@ -1,9 +1,20 @@
+@import "../../../assets/styles/index";
 .about-us-block{
   background-color: #59ab6e;
   padding: 100px 0;
+  @include screen($desktop){
+    padding: 60px 0;
+  }
   .about-us-cont{
     align-items: center;
     padding: 15px;
+    @include screen($desktop){
+      padding: 15px 30px;
+    }
+    @include screen($tablet-m){
+      flex-direction: column;
+      padding: 0 30px;
+    }
     .text-block{
       font-family: 'Roboto-Light', sans-serif;
       .about-us-h2{
@@ -12,15 +23,35 @@
         font-weight: 400;
         color: white;
         margin: 10px 0;
+        @include screen($tablet-l){
+          font-size: 30px;
+        }
+        @include screen($tablet-m){
+          font-size: 26px;
+          text-align: center;
+        }
       }
       .about-us-prg{
         color: white;
         font-size: 18px;
         line-height: 1.4;
+        @include screen($tablet-l){
+          font-size: 16px;
+        }
+        @include screen($tablet-m){
+          font-size: 14px;
+          text-align: center;
+        }
       }
     }
     .about-us-img{
       width: 420px;
+      @include screen($tablet-l){
+        width: 320px;
+      }
+      @include screen($tablet-m){
+        width: 250px;
+      }
     }
   }
 }

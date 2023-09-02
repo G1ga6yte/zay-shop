@@ -1,3 +1,4 @@
+@import "../../assets/styles/index";
 .cart-block {
   padding: 20px 0;
   flex-direction: column;
@@ -10,102 +11,25 @@
     padding: 0 200px;
     flex-direction: column;
     align-items: end;
-  }
-
-  .buy-page{
-    width: 100%;
-    z-index: 9998;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: none;
-    transition: 0.5s all ease-in-out;
-    top: -100px;
-    height: 100vh;
-    overflow: hidden !important;
-
-    .buy-block{
-      position: fixed;
-      z-index: 9999;
-      background-color: white;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      flex-direction: column;
-      padding: 50px 15px 20px 15px;
-      border-radius: 20px;
-
-
-      .close-button{
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        font-size: 40px;
-        font-family: Arial, sans-serif;
-        cursor: pointer;
-        transition: 0.3s ease-in-out;
-        &:hover{
-          color: #001122;
-          transition: 0.3s ease-in-out;
-        }
-      }
-
-      .paying-types{
-        padding: 15px;
-        .pay-icon{
-          font-size: 40px;
-          margin: 0 10px;
-          cursor: pointer;
-          padding: 10px;
-          border-radius: 10px;
-          &:hover{
-            outline: 3px solid #449fdb;
-
-          }
-        }
-      }
-
-
-      .item-price{
-        text-align: end;
-        font-family: 'Roboto-Light', sans-serif;
-        font-weight: 600;
-        margin: 10px 0;
-        .price-span{
-          font-size: 20px;
-          color: #555555;
-          margin-right: 20px;
-        }
-      }
-
-      .go-to-pay{
-        margin: 20px 0;
-        background-color: #59ab6e;
-        border: none;
-        border-radius: 8px;
-        font-size: 18px;
-        color: white;
-        padding: 10px 30px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s ease-in-out;
-
-        &:hover{
-          transition: 0.3s ease-in-out;
-          background-color: white;
-          outline: 2px solid #59ab6e;
-          color: #59ab6e;
-        }
-      }
+    @include screen($tablet-l){
+      padding: 0 100px;
     }
-
+    @include screen($tablet){
+      padding: 0 10px;
+    }
   }
 
   .cart-item-block {
     width:100%;
     margin: 10px auto;
     padding: 5px;
+    height: 130px;
     border-radius: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    @include screen($tablet-m){
+      height: 100px;
+
+    }
 
     .img-block {
       overflow: hidden;
@@ -116,6 +40,9 @@
         height: 120px;
         border-radius: 20px;
         transition: 0.3s ease-in-out;
+        @include screen($tablet-m){
+height: 90px;
+        }
 
         &:hover{
           transition: 0.3s ease-in-out;
@@ -127,21 +54,65 @@
     .name-desc {
       width: 60%;
       font-family: 'Roboto-Light', sans-serif;
+      @include screen($tablet-m){
+width: 55%;
+        padding-left: 5px;
+      }
 
       .item-name {
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 5px;
+        @include screen($tablet-l){
+          font-size: 22px;
+        }
+        @include screen($tablet-m){
+          font-size: 14px;
+        }
       }
       .item-description {
         font-size: 14px;
         line-height: 1.4;
         margin-bottom: 5px;
+        @include screen($tablet-l){
+margin: 10px 0;
+        }
+        @include screen($tablet-m){
+          font-size: 12px;
+          margin: 5px 0;
+        }
       }
       .rating-brand-color{
+        flex-wrap: wrap;
+        .rating-block{
+          @include screen($tablet-m){
+width: 65%;
+          }
+          .icon-star{
+            @include screen($tablet-m){
+              font-size: 14px;
+            }
+          }
+        }
         .item-brand{
           margin: 0 20px;
           font-weight: 600;
+          @include screen($tablet-l){
+            font-size: 14px;
+          }
+          @include screen($tablet-m){
+            width: 80px;
+            margin: 0;
+            font-size: 12px;
+          }
+        }
+        .item-color{
+          @include screen($tablet-l){
+            font-size: 14px;
+          }
+          @include screen($tablet-m){
+width: 80px;
+          }
         }
       }
     }
@@ -149,19 +120,30 @@
     .options-block{
       font-family: 'Roboto-Light', sans-serif;
       width: 20%;
+      @include screen($tablet-m){
+width: 30%;
+      }
       .item-price{
         text-align: center;
         display: block;
         font-size: 28px;
         margin: 2px 0;
+        @include screen($tablet-l){
+          font-size: 24px;
+        }
+        @include screen($tablet-m){
+          font-size: 18px;
+        }
       }
-      .button-checkbox-block{
-        padding: 0 15px;
-        margin: 5px 0;
-        font-family: 'Roboto-Light', sans-serif !important;
-        align-items: center !important;
+
+      .buy-remove-block{
+        margin: 10px 0;
+        justify-content: center;
+        @include screen($tablet-m){
+margin: 4px 0;
+        }
         .delete-button{
-          font-size: 14px;
+          font-size: 18px;
           color: white;
           background-color: #e74c3c;
           border-radius: 8px;
@@ -172,6 +154,10 @@
           cursor: pointer;
           transition: 0.5s ease-in-out;
           margin-right: 10px;
+          @include screen($tablet-m){
+            font-size: 14px;
+            padding: 6px 8px;
+          }
           &:hover{
             transition: 0.5s ease-in-out;
             background-color: white;
@@ -180,35 +166,73 @@
             font-weight: 500;
           }
         }
+        .buy-item-now{
+          background-color: #59ab6e;
+          border: none;
+          border-radius: 8px;
+          padding: 8px 12px;
+          color: white;
+          font-size: 18px;
+          cursor: pointer;
+          transition: 0.5s ease-in-out;
+          @include screen($tablet-m){
+            font-size: 14px;
+            padding: 6px 8px;
+          }
+          &:hover{
+            transition: 0.5s ease-in-out;
+            background-color: white;
+            color: #59ab6e;
+            outline: 2px solid #59ab6e;
+
+          }
+        }
+
+      }
+      .button-checkbox-block{
+        justify-content: center;
+        margin: 5px auto;
+        font-family: 'Roboto-Light', sans-serif !important;
+        align-items: center !important;
+        .counting-block{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          width: 90px;
+          .count-button{
+            border-radius: 5px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            @include screen($tablet-m){
+padding: 3px 8px;
+            }
+            &:hover{
+              background-color: #bcbcbc;
+              transition: 0.3s ease-in-out;
+            }
+          }
+          .counting-number{
+            padding: 3px 10px;
+            @include screen($tablet-m){
+padding: 2px 8px;
+            }
+          }
+        }
         .item-checkbox{
           width: 20px;
           height: 20px;
           margin: 5px;
           cursor: pointer;
           accent-color: #59ab6e;
+          @include screen($tablet-m){
+width: 15px;
+            height: 20px;
+          }
           &:checked:before{
             background-color: white !important;
           }
-        }
-      }
-      .buy-item-now{
-        margin: 2px auto;
-        display: block;
-        background-color: #59ab6e;
-        border: none;
-        border-radius: 8px;
-        padding: 8px 16px;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-        &:hover{
-          transition: 0.5s ease-in-out;
-          background-color: white;
-          color: #59ab6e;
-          outline: 2px solid #59ab6e;
-
         }
       }
     }
@@ -226,6 +250,18 @@
     text-align: center;
     transition: 0.5s ease-in-out;
     cursor: pointer;
+    @include screen($tablet-l){
+      padding: 6px 16px;
+      font-size: 18px;
+    }
+    @include screen($tablet){
+      padding: 6px 12px;
+      font-size: 16px;
+    }
+    @include screen($tablet-m){
+      padding: 4px 10px;
+      font-size: 14px;
+    }
     &:hover{
       transition: 0.5s ease-in-out;
       background-color: white;
@@ -237,9 +273,4 @@
     }
   }
 
-  .disp-on {
-    transition: 0.5s all ease-in-out;
-
-    display: block !important;
-  }
 }

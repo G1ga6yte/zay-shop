@@ -84,17 +84,21 @@ function SItem() {
                   </ul>
                 </div>
                 <div className="size-quantity-block G-flex">
-                  <span className="size">Size : </span>
-                  <button className="size-button">S</button>
-                  <button className="size-button">M</button>
-                  <button className="size-button">L</button>
-                  <button className="size-button">XL</button>
+                  <div className="size-block G-flex">
+                    <span className="size">Size : </span>
+                    <button className="size-button">S</button>
+                    <button className="size-button">M</button>
+                    <button className="size-button">L</button>
+                    <button className="size-button">XL</button>
+                  </div>
                   
                   
-                  <span className="quantity">Quantity</span>
-                  <button className="size-button">-</button>
-                  <span className="quant">1</span>
-                  <button className="size-button">+</button>
+                  <div className="size-block G-flex">
+                    <span className="quantity">Quantity</span>
+                    <button className="size-button">-</button>
+                    <span className="quant">1</span>
+                    <button className="size-button">+</button>
+                  </div>
                 </div>
                 <div className="buttons-block G-flex G-flex-between">
                   <button className="button">Buy</button>

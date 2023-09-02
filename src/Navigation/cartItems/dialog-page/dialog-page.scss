@@ -1,54 +1,154 @@
-.dialog-title{
+@import "../../../assets/styles/index";
+.dialog-title {
   font-size: 28px;
+  text-align: center;
+  padding: 10px 0 !important;
+  @include screen($tablet-l){
+    font-size: 24px;
+  }
+  @include screen($mobile-m){
+    font-size: 20px;
+  }
 }
 
 
+.checked-item {
+  justify-content: space-between !important;
+}
 
-  .checked-item{
-    flex-direction: column;
-    align-items: center;
-
+.paying-types {
+  padding: 15px;
+  @include screen($mobile-m){
+padding: 10px;
   }
 
-.paying-types{
-  padding: 15px;
-  .pay-icon{
+  .pay-icon {
     font-size: 40px;
     margin: 0 10px;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
-    &:hover{
+    @include screen($tablet-l){
+      font-size: 30px;
+      margin: 0 5px;
+    }
+    @include screen($mobile-m){
+      font-size: 25px;
+      padding: 6px;
+    }
+
+    &:hover {
       outline: 3px solid #449fdb;
 
     }
   }
 }
-.checked-item{
+
+.checked-item {
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
   margin: 10px 0;
   padding: 10px 20px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 15px;
-  .checked-item-img{
+  @include screen($tablet-l){
+padding: 6px 14px;
+  }
+  @include screen($mobile-m){
+margin: 5px 0;
+    padding: 6px 10px;
+  }
+
+  .checked-item-img {
     width: 40px;
     border-radius: 10px;
   }
-  .item-name-color{
+
+  .item-name-color {
     font-family: 'Roboto-Light', sans-serif;
     flex-direction: column;
     margin: 0 15px;
-    .checked-item-name{
+
+    .checked-item-name {
       font-size: 20px;
+      @include screen($tablet-l){
+        font-size: 16px;
+      }
+      @include screen($mobile-m){
+        font-size: 14px;
+      }
     }
-    .checked-item-color{
+
+    .checked-item-color {
       color: black;
+      @include screen($tablet-l){
+        font-size: 14px;
+      }
+      @include screen($mobile-m){
+        font-size: 12px;
+      }
     }
   }
-  .checked-item-price{
+
+  .checked-item-price {
     font-family: 'Roboto-Light', sans-serif;
     font-weight: 600;
+    @include screen($tablet-l){
+      font-size: 14px;
+    }
+    @include screen($mobile-m){
+      font-size: 12px;
+    }
+  }
+}
+
+.go-to-pay {
+  margin: 0;
+  background-color: #59ab6e;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: white;
+  padding: 10px 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  @include screen($tablet-l){
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+  @include screen($mobile-m){
+padding: 6px 15px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    outline: 2px solid #59ab6e;
+    color: #59ab6e;
+  }
+}
+
+.item-price{
+  text-align: end;
+  font-family: 'Roboto-Light', sans-serif;
+  font-weight: 600;
+  margin: 10px 0;
+  font-size: 14px;
+  @include screen($mobile-m){
+    font-size: 12px;
+  }
+  .price-span{
+    font-size: 20px;
+    color: #555555;
+    margin-right: 20px;
+    @include screen($tablet-l){
+      font-size: 16px;
+    }
+    @include screen($mobile-m){
+      font-size: 14px;
+    }
   }
 }

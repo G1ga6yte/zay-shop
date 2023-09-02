@@ -1,6 +1,7 @@
 import {Img} from "../../../assets/images/imagesData";
 export const ShopData = [
   {
+    check: false,
     id:1,
     img: Img.shop01,
     name: "Oupidatat non",
@@ -17,6 +18,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:2,
     img: Img.shop02,
     name: "Bupidatat non",
@@ -33,6 +35,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:3,
     img: Img.shop03,
     name: "Oupidatat non",
@@ -49,6 +52,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:4,
     img: Img.shop04,
     name: "Aupidatat non",
@@ -65,6 +69,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:5,
     img: Img.shop05,
     name: "Oupidatat non",
@@ -81,6 +86,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:6,
     img: Img.shop06,
     name: "Gupidatat non",
@@ -97,6 +103,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:7,
     img: Img.shop07,
     name: "Oupidatat non",
@@ -113,6 +120,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:8,
     img: Img.shop08,
     name: "Tupidatat non",
@@ -129,6 +137,7 @@ export const ShopData = [
     }
   },
   {
+    check: false,
     id:9,
     img: Img.shop09,
     name: "Cupidatat non",

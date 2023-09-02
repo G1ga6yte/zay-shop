@@ -15,7 +15,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 export default function CustomizedDialogs() {
-  const {openDialog, handleDialogClose, checkedItems, sum} =useCartContext()
+  const {cartItem, openDialog, handleDialogClose, sum} =useCartContext()
   
   return (
      <div className="dialog-block">
@@ -26,7 +26,7 @@ export default function CustomizedDialogs() {
           open={openDialog}
        >
          <DialogTitle className="dialog-title" sx={{ m: 0, p: 0 }} id="customized-dialog-title">
-           Modal title
+           Place your order
          </DialogTitle>
          
          <IconButton
@@ -52,17 +52,20 @@ export default function CustomizedDialogs() {
            </div>
            
            <div className="checked-items">
-             {checkedItems.map((el)=>{
-               return <div className="checked-item G-flex G-flex-between">
-                 <img className="checked-item-img" src={el.img} alt=""/>
-                 <div className="item-name-color G-flex">
-                   <h3 className="checked-item-name">{el.name}</h3>
-                   <span className="checked-item-color">{el.info.color}</span>
-                 </div>
-                 <span className="checked-item-price">
-                   {el.price}
+             {cartItem.map((el)=>{
+               if(el.check){
+                 return <div className="checked-item G-flex G-flex-between">
+                   <img className="checked-item-img" src={el.img} alt=""/>
+                   <div className="item-name-color G-flex">
+                     <h3 className="checked-item-name">{el.name}</h3>
+                     <span className="checked-item-color">{el.info.color}</span>
+                   </div>
+                   <span className="checked-item-price">
+                   ${el.sum * el.count}.00
                  </span>
-               </div>
+                 </div>
+               }
+               
              })}
            </div>
   

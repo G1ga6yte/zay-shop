@@ -1,27 +1,21 @@
-.image-modal{
-  .modal{
-    .modal-img{
-      height: 20px !important;
-    }
+
+.modal-box {
+  border-radius: 15px !important;
+  position: relative;
+  height: 80vh;
+  z-index: 9999 !important;
+  .close-icon {
+    position: absolute !important;
+    top: -20px;
+    right: -50px;
+    background-color: rgb(49, 49, 49, 0.6) !important;
+    color: white !important;
+  }
+  .modal-img {
+    height: 100%;
+    border-radius: 15px !important;
   }
 }
 
-.modal-img{
-  height: 80vh;
-  border-radius: 50px !important;
-}
 
-.modal-box{
-    border-radius: 50px !important;
-}
 
-.close-icon{
-  position: absolute !important;
-  top: -20px;
-  right: -50px;
-}
-
-.close-icon{
-  background-color: rgb(49, 49, 49, 0.6) !important;
-  color: white !important;
-}

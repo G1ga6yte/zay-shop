@@ -11,7 +11,8 @@ const style = {
   transform: "translate(-50%, -50%)",
   bgcolor  : "background.paper",
   boxShadow: 24,
-  p: 0
+  p: 0,
+  outline: "none"
 };
 
 function ImageModal ({...props}){
@@ -21,9 +22,7 @@ function ImageModal ({...props}){
   
   
   return(
-     <div className="image-modal">
        <Modal
-              classes="modal"
               open={open}
               onClose={handleClose}
               aria-labelledby="modal-modal-title"
@@ -36,7 +35,6 @@ function ImageModal ({...props}){
            <img  className="modal-img" src={props.img} alt=""/>
          </Box>
        </Modal>
-     </div>
   )
 }
 

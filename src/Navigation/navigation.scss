@@ -1,77 +1,253 @@
-.navigation-cont{
-  box-shadow: 0 8px 16px rgba(0,0,0,.15);
-  z-index: 111;
+@import "../assets/styles";
+
+.navigation-cont {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+  z-index: 9999 !important;
   position: relative;
-    .contacts-cont{
-      background-color: #212934;
-      padding: 10px 0;
-      .header-contacts{
-        .mail-number{
-          .links{
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            text-decoration: none;
-            color: white;
-            margin-right: 20px;
-            font-size: 14px;
-            .link-p{
-              margin-left: 10px;
-            }
+
+
+  .contacts-cont {
+    background-color: #212934;
+    padding: 10px 0;
+    @include screen($tablet-l) {
+      padding: 8px 0;
+    }
+
+
+    .header-contacts {
+      @include screen($tablet-m) {
+        padding: 8px 10px;
+      }
+      .mail-number {
+        .links {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 300;
+          text-decoration: none;
+          color: white;
+          margin-right: 20px;
+          font-size: 14px;
+
+          @include screen($tablet-l) {
+            font-size: 12px;
+          }
+          @include screen($tablet-m) {
+            margin-right: 10px;
+          }
+
+          .link-p {
+            margin-left: 10px;
           }
         }
-        .web-sites{
-          .links{
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            margin: 0 5px;
+      }
+
+      .web-sites {
+        .links {
+          color: white;
+          text-decoration: none;
+          font-size: 12px;
+          margin: 0 5px;
+          @include screen($tablet-m) {
+            font-size: 10px;
+            margin: 0 3px;
           }
         }
       }
     }
-  .navigation-block{
+  }
+
+  .navigation-block {
     font-family: 'Roboto', sans-serif;
-    padding: 10px 0;
-    .Zay-logo{
+    padding: 10px 20px;
+
+
+    .Zay-logo {
       font-size: 48px;
       color: #59ab6e;
       font-weight: 500;
       text-decoration: none;
+      @include screen($tablet-l){
+        font-size: 40px;
+      }
+      @include screen($tablet){
+        font-size: 30px;
+      }
+      @include screen($tablet-m){
+        font-size: 25px;
+      }
     }
-    .navigation-block{
-      .nav-link{
-        color: rgba(0,0,0,.55);
+
+    .navigation-block {
+      @include screen($tablet){
+        display: none;
+      }
+    }
+    .nav-link {
+        color: rgba(0, 0, 0, .55);
         font-size: 18px;
         margin: 0 35px;
         text-decoration: none;
         font-weight: 100;
-        &:hover{
+        @include screen($tablet-l){
+          font-size: 16px;
+          margin: 0 25px;
+        }
+
+
+        &:hover {
           color: #59ab6e;
         }
       }
-    }
-    .nav-tools{
-      .tools-link{
-        color: #212529;
-        text-decoration: none;
-        font-size: 22px;
-        margin: 0 10px;
+
+    .nav-tools {
+      @include screen($tablet){
+        display: none;
       }
-      .icon-cart-arrow-down{
-        position: relative;
-        .cart-count{
-          display: block;
-          position: absolute;
-          top: -6px;
-          right: -12px;
-          padding: 3px 8px;
-          border-radius: 10px;
-          font-size: 12px;
-          background-color: #E9EEF5;
-          font-weight: 600;
-          font-family: 'Roboto', sans-serif;
+    }
+    .tools-link {
+      color: #212529;
+      text-decoration: none;
+      font-size: 22px;
+      margin: 0 10px;
+      @include screen($tablet-l){
+        font-size: 18px;
+      }
+    }
+    .icon-cart-arrow-down {
+      position: relative;
+
+      .cart-count {
+        display: block;
+        position: absolute;
+        top: -6px;
+        right: -12px;
+        padding: 3px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        background-color: #E9EEF5;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        @include screen($tablet-l){
+          font-size: 10px;
+          padding: 2px 6px;
+        }
+        @include screen($tablet){
+          font-size: 8px;
+          padding: 2px 4px;
         }
       }
+    }
+
+    .nav-burger{
+      display: none;
+      @include screen($tablet){
+        display: block;
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      .menu > li {
+        margin: 0 1rem;
+        overflow: hidden;
+      }
+
+      .menu-button-container {
+        display: none;
+        height: 100%;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menu-toggle {
+        display: none;
+      }
+
+      .menu-button,
+      .menu-button::before,
+      .menu-button::after {
+        display: block;
+        background-color: black;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+      }
+
+      .menu-button::before {
+        content: '';
+        margin-top: -8px;
+      }
+
+      .menu-button::after {
+        content: '';
+        margin-top: 8px;
+      }
+
+      #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0;
+        transform: rotate(405deg);
+      }
+
+      #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+      }
+
+      #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0;
+        transform: rotate(-405deg);
+      }
+        .menu-button-container {
+          display: flex;
+        }
+        .menu {
+          position: absolute;
+          top: 0;
+          margin-top: 80px;
+          left: 0;
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999 !important;
+          background-color: white !important;
+        }
+        #menu-toggle ~ .menu li {
+          height: 0;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        #menu-toggle:checked ~ .menu li {
+          z-index: 9999 !important;
+          background-color: white;
+
+          height: 2.5em;
+          padding: 0.5em;
+          transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .menu > li {
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          padding: 0.5em 0;
+          width: 100%;
+          color: white;
+          background-color:white;
+        }
+        .menu > li:not(:last-child) {
+          border-bottom: 1px solid #444;
+        }
+
     }
   }
 }

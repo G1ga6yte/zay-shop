@@ -1,10 +1,22 @@
+@import "../assets/styles/index.scss";
+
 .footer-cont {
   background-color: #212934;
-  padding: 50px 0 0 0;
+  padding: 65px 40px;
+  position: relative;
+  @include screen($tablet){
+    padding: 50px 15px 100px 15px;
+
+  }
 
   .footer-links-cont {
     padding: 0 15px;
     position: relative;
+
+    @include screen($tablet) {
+      flex-direction: column;
+      padding: 15px 30px;
+    }
 
     .links-section {
       width: 30%;
@@ -12,50 +24,71 @@
       font-family: 'Roboto-Light', sans-serif;
       list-style: none;
 
-      .section-header{
+      @include screen($tablet) {
+        width: 90%;
+        margin: 20px auto;
+
+      }
+
+      .section-header {
         font-size: 30px;
         font-weight: 700;
         color: white;
         margin-bottom: 30px;
         position: relative;
-        &:before{
+        @include screen($tablet-l) {
+          font-size: 26px;
+        }
+
+        &:before {
           content: "";
           position: absolute;
           width: 100%;
           height: 1px;
           background-color: #2D343F;
           top: 55px;
+          @include screen($tablet-l) {
+            top: 45px;
+          }
         }
       }
-      .zay-shop{
+
+      .zay-shop {
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         color: #59ab6e;
       }
-      .li{
+
+      .li {
         margin: 6px 0;
         font-size: 18px;
         color: white;
         display: flex;
         align-items: center;
 
-        .li-icon{
+        @include screen($tablet-l) {
+          font-size: 16px;
+        }
+
+        .li-icon {
           margin-right: 6px;
         }
 
-        .li-link{
+        .li-link {
           text-decoration: none;
-          color:  white;
+          color: white;
           font-weight: 500;
           letter-spacing: 1px;
-          &:hover{
+
+          &:hover {
             transition: 0.3s ease;
             color: #59ab6e;
           }
         }
       }
     }
-    &:before{
+
+    &:before {
       content: "";
       width: 100%;
       height: 1px;
@@ -64,12 +97,24 @@
       bottom: -30px;
     }
   }
-  .websites-input-block{
+
+  .websites-input-block {
     padding: 15px;
     margin-top: 40px;
-    .websites-links{
+
+    @include screen($tablet) {
+      flex-direction: column;
+      padding: 15px 0;
+    }
+
+    .websites-links {
       list-style: none;
-      .link{
+
+      @include screen($tablet){
+        justify-content: space-between;
+      }
+
+      .link {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -79,36 +124,57 @@
         border: 1px solid #2D343F;
         border-radius: 50%;
 
-        &:hover{
+
+        &:hover {
           transition: 0.5s ease;
           background-color: white;
-          .span{
+
+          .span {
             color: #2D343F;
           }
         }
-        .span{
+
+        .span {
           font-size: 22px;
           margin: 12px;
+          @include screen($tablet-l) {
+            font-size: 18px;
+          }
         }
       }
     }
-    .input-button{
+
+    .input-button {
       padding: 15px;
-      .footer-input{
+
+      @include screen($tablet-m){
+        padding: 15px 0;
+      }
+
+      .footer-input {
         font-size: 18px;
         display: block;
-        padding: 8px 20px;
+        padding: 6px 20px;
         background-color: transparent;
         font-family: 'Roboto-Light', sans-serif;
         font-weight: 600;
         border: 1px solid #2D343F;
         border-radius: 5px 0 0 5px;
-        &:focus{
+        @include screen($tablet-l) {
+          font-size: 16px;
+          padding: 4px 15px;
+        }
+        @include screen($tablet-m){
+          padding: 4px 10px;
+        }
+
+        &:focus {
           transition: 0.3s ease;
           outline: 5px solid #1F314C;
         }
       }
-      .subscribe-button{
+
+      .subscribe-button {
         height: 100%;
         display: block;
         padding: 6px 15px;
@@ -119,22 +185,43 @@
         color: white;
         font-family: 'Roboto-Light', sans-serif;
         font-weight: 200;
+        @include screen($tablet-l) {
+          font-size: 16px;
+          padding: 5px 10px;
+        }
       }
     }
   }
-  .copyright-block{
+
+  .copyright-block {
     background-color: #1D242D;
     padding: 30px;
-    .copyright-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    @include screen($tablet){
+      padding: 30px 0;
+    }
+
+    .copyright-text {
       font-family: 'Roboto-Light', sans-serif;
       font-weight: 400;
       font-size: 18px;
       letter-spacing: 0.5px;
       color: white;
-      .template-link{
+      @include screen($tablet-l) {
+        font-size: 16px;
+      }
+      @include screen($tablet-m) {
+        text-align: center;
+      }
+
+      .template-link {
         color: white;
         margin-left: 5px;
-        &:hover{
+
+        &:hover {
           transition: 0.3s ease;
           color: #59ab6e;
         }
